@@ -1,0 +1,15 @@
+Logging framework incompatibility
+
+Error:
+java.lang.NoSuchMethodError: org.slf4j.spi.LocationAwareLogger.log(Lorg/slf4j/Marker
+
+
+Solución:
+
+You are mixing the 1.5.6 version of the jcl bridge with the 1.6.0 version of the slf4j-api; 
+this won't work because of a few changes in 1.6.0. Use the same versions for both, i.e. 1.6.1 (the latest). 
+I use the jcl-over-slf4j bridge all the time and it works fine.
+
+
+Extraido de:
+http://stackoverflow.com/questions/3519978/logging-framework-incompatibility
